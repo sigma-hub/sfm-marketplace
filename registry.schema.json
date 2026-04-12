@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/sigma-hub/sfm-marketplace/main/registry.schema.json",
+  "title": "Sigma File Manager Marketplace",
+  "description": "Schema for the official Sigma File Manager Marketplace. This is the source of truth for curated extension metadata displayed in the marketplace.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "extensions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version for backward compatibility",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "extensions": {
+      "type": "array",
+      "description": "List of registered extensions",
+      "items": {
+        "$ref": "#/definitions/ExtensionEntry"
+      }
+    }
+  },
+  "definitions": {
+    "ExtensionEntry": {
+      "type": "object",
+      "description": "A registered extension entry with curated metadata",
+      "required": [
+        "id",
+        "name",
+        "description",
+        "publisher",
+        "repository",
+        "featured",
+        "categories"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique extension identifier in format 'publisher.extension-name'. Must match the id in the extension's package.json",
+          "pattern": "^[a-z0-9-]+\\.[a-z0-9-]+$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Curated display name shown in the marketplace. Takes precedence over package name.",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "description": {
+          "type": "string",
+          "description": "Curated description shown in the marketplace. This is the only source of description (not in package).",
+          "minLength": 10,
+          "maxLength": 500
+        },
+        "publisher": {
+          "type": "object",
+          "description": "Verified publisher (same shape as extension manifest publisher). Takes precedence over package publisher.",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Verified publisher name",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "description": "Verified publisher profile URL (typically GitHub profile)",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false
+        },
+        "repository": {
+          "type": "string",
+          "description": "GitHub repository URL. Used for fetching versions and downloading the extension.",
+          "format": "uri",
+          "pattern": "^https://github\\.com/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+$"
+        },
+        "featured": {
+          "type": "boolean",
+          "description": "Whether this extension is featured in the marketplace. Featured extensions appear at the top."
+        },
+        "categories": {
+          "type": "array",
+          "description": "Curated categories for marketplace filtering. Takes precedence over package categories.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "File Management",
+              "Media",
+              "Security",
+              "Backup & Sync",
+              "Productivity",
+              "Search & Filter",
+              "Appearance",
+              "Integration",
+              "Developer Tools",
+              "Example",
+              "Other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "tags": {
+          "type": "array",
+          "description": "Additional search keywords for discovery. Combined with package tags for search.",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30
+          },
+          "uniqueItems": true
+        },
+        "integrity": {
+          "type": "string",
+          "description": "SHA-256 integrity hash for extension archive downloads (hex or 'sha256:<hex>'). Used when no version-specific integrity exists.",
+          "pattern": "^(sha256:)?[a-fA-F0-9]{64}$"
+        },
+        "releaseMetadata": {
+          "type": "object",
+          "description": "Version-specific metadata keyed by semantic version (without the 'v' prefix).",
+          "patternProperties": {
+            "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$": {
+              "type": "object",
+              "properties": {
+                "integrity": {
+                  "type": "string",
+                  "description": "SHA-256 integrity hash for this version's release archive.",
+                  "pattern": "^(sha256:)?[a-fA-F0-9]{64}$"
+                },
+                "manifest": {
+                  "type": "string",
+                  "description": "Optional explicit manifest URL for this version.",
+                  "format": "uri"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

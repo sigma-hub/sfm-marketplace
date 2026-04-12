@@ -1,0 +1,83 @@
+{
+  "$schema": "./registry.schema.json",
+  "schemaVersion": "1.0.0",
+  "extensions": [
+    {
+      "id": "sigma.video-downloader",
+      "name": "Video Downloader",
+      "description": "Download videos, playlists, audio, and streams from YouTube, Twitch, and 1000+ other websites",
+      "publisher": {
+        "name": "sigma-hub",
+        "url": "https://github.com/sigma-hub"
+      },
+      "repository": "https://github.com/sigma-hub/sfm-extension-video-downloader",
+      "featured": true,
+      "categories": [
+        "Media"
+      ],
+      "tags": [
+        "media",
+        "video",
+        "audio",
+        "stream",
+        "playlist",
+        "download",
+        "downloader",
+        "youtube",
+        "twitch",
+        "ffmpeg",
+        "yt-dlp"
+      ]
+    },
+    {
+      "id": "sigma.excalidraw",
+      "name": "Excalidraw",
+      "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "publisher": {
+        "name": "sigma-hub",
+        "url": "https://github.com/sigma-hub"
+      },
+      "repository": "https://github.com/sigma-hub/sfm-extension-excalidraw",
+      "featured": true,
+      "categories": [
+        "Productivity"
+      ],
+      "tags": [
+        "excalidraw",
+        "drawing",
+        "whiteboard",
+        "diagram",
+        "sketch",
+        "plan"
+      ]
+    },
+    {
+      "id": "sigma.media-converter",
+      "name": "Media Converter",
+      "description": "Convert videos and images to other formats, reduce image size in one click, and more",
+      "publisher": {
+        "name": "sigma-hub",
+        "url": "https://github.com/sigma-hub"
+      },
+      "repository": "https://github.com/sigma-hub/sfm-extension-media-converter",
+      "featured": true,
+      "categories": [
+        "Media"
+      ],
+      "tags": [
+        "media",
+        "video",
+        "image",
+        "gif",
+        "edit",
+        "editor",
+        "convert",
+        "compress",
+        "optimize",
+        "reduce",
+        "size",
+        "ffmpeg"
+      ]
+    }
+  ]
+}
