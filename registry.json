@@ -78,6 +78,30 @@
         "size",
         "ffmpeg"
       ]
+    },
+    {
+      "id": "cos-overclock.catppuccin-themes",
+      "name": "Catppuccin Themes",
+      "description": "Catppuccin color and icon themes for Sigma File Manager.",
+      "publisher": {
+        "name": "cos-overclock",
+        "url": "https://github.com/cos-overclock"
+      },
+      "repository": "https://github.com/cos-overclock/sigma-file-manager",
+      "featured": false,
+      "categories": ["Appearance"],
+      "tags": [
+        "catppuccin",
+        "theme",
+        "themes",
+        "icon-theme",
+        "icons",
+        "palette",
+        "latte",
+        "frappe",
+        "macchiato",
+        "mocha"
+      ]
     }
   ]
 }
