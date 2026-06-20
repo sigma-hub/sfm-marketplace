@@ -102,6 +102,22 @@
         "macchiato",
         "mocha"
       ]
+    },
+    {
+      "id": "hetima.light-themes",
+      "name": "Hetima Light Themes",
+      "description": "Light color themes for Sigma File Manager.",
+      "publisher": {
+        "name": "hetima",
+        "url": "https://github.com/hetima"
+      },
+      "repository": "https://github.com/hetima/sigma-light-themes",
+      "featured": false,
+      "categories": ["Appearance"],
+      "tags": [
+        "theme",
+        "themes"
+      ]
     }
   ]
 }
