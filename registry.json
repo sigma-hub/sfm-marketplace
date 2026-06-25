@@ -102,6 +102,46 @@
         "size",
         "ffmpeg"
       ]
+    },
+    {
+      "id": "cos-overclock.catppuccin-themes",
+      "name": "Catppuccin Themes",
+      "description": "Catppuccin color and icon themes for Sigma File Manager.",
+      "publisher": {
+        "name": "cos-overclock",
+        "url": "https://github.com/cos-overclock"
+      },
+      "repository": "https://github.com/cos-overclock/sigma-file-manager",
+      "featured": false,
+      "categories": ["Appearance"],
+      "tags": [
+        "catppuccin",
+        "theme",
+        "themes",
+        "icon-theme",
+        "icons",
+        "palette",
+        "latte",
+        "frappe",
+        "macchiato",
+        "mocha"
+      ]
+    },
+    {
+      "id": "hetima.light-themes",
+      "name": "Hetima Light Themes",
+      "description": "Light color themes for Sigma File Manager.",
+      "publisher": {
+        "name": "hetima",
+        "url": "https://github.com/hetima"
+      },
+      "repository": "https://github.com/hetima/sigma-light-themes",
+      "featured": false,
+      "categories": ["Appearance"],
+      "tags": [
+        "theme",
+        "themes"
+      ]
     }
   ]
 }
