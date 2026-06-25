@@ -3,6 +3,30 @@
   "schemaVersion": "1.0.0",
   "extensions": [
     {
+      "id": "sigma.clipboard",
+      "name": "Clipboard History",
+      "description": "Capture clipboard history, pin entries, and paste text, images, and file paths into other apps",
+      "publisher": {
+        "name": "sigma-hub",
+        "url": "https://github.com/sigma-hub"
+      },
+      "repository": "https://github.com/sigma-hub/sfm-extension-clipboard",
+      "featured": true,
+      "categories": [
+        "Productivity"
+      ],
+      "tags": [
+        "clipboard",
+        "history",
+        "paste",
+        "pin",
+        "text",
+        "image",
+        "files",
+        "productivity"
+      ]
+    },
+    {
       "id": "sigma.video-downloader",
       "name": "Video Downloader",
       "description": "Download videos, playlists, audio, and streams from YouTube, Twitch, and 1000+ other websites",
